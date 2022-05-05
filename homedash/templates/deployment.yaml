@@ -36,6 +36,21 @@ spec:
           env:
             - name: ASPNETCORE_URLS
               value: http://+:80
+            - name: CosmosConnectionString
+              valueFrom:
+                  secretKeyRef:
+                    name: homedash
+                    key: CosmosConnectionString
+            - name: SLAPIKey
+               valueFrom:
+                  secretKeyRef:
+                    name: homedash
+                    key: SLAPIKey
+            - name: AzureMapsKey
+               valueFrom:
+                  secretKeyRef:
+                    name: homedash
+                    key: AzureMapsKey
           ports:
             - name: http
               containerPort: 80
